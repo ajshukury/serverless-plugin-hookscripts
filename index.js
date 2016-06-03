@@ -125,7 +125,7 @@ module.exports = function(S) {
             env['SLS_HOOK_' + paramName.toUpperCase()] = typeof paramValue == 'string' || typeof paramValue == 'number' ? paramValue : paramValue === null ? '' : JSON.stringify(paramValue);
           });
         }
-        if (exec(scriptPath + options, {
+        if (exec('sh ' + scriptPath + options, {
             silent: false,
             env: env
           }).code !== 0) {
